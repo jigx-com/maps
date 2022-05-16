@@ -251,6 +251,7 @@ RCT_EXPORT_METHOD(setAccessToken:(NSString *)accessToken)
 #ifdef RNMBGL_USE_MAPLIBRE
     if (accessToken.length > 0) {
       [MGLSettings setApiKey:accessToken];
+      [MGLSettings useWellKnownTileServer:MGLMapbox];
     }
 #else
     [MGLAccountManager setAccessToken:accessToken];
